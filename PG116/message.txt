@@ -1,0 +1,64 @@
+Exercice 1:
+
+1. 	Abstrait: Se focaliser sur les propriétés FONCTIONNELLES qu'on veut donner au TAD.
+   	Paramètres, axium, (Séparation specification et implémentation) ici spécification
+   	Qu'est ce qu'on peut faire avec ce type de données.(ensemble de prototypes)
+   	Ensemble de propriétés (De n'importe quel forme= = comportement de fonctions dans cas particuliers.
+   	Propriétés logiques internes.
+	Dire ce qu'il faut faire, pas comment le faire.
+	Indépendant du language.
+
+2.	La complexité des opérations en temps et en espace.
+	Dynamic est de loin le plus efficace au niveau de la gestion de la mémoire.
+
+
+3.	
+
+Exercice 2:
+
+1.	int set__is_empty(struct set se) ou int set__is_empty(const struct set* se)
+
+2.	set__is_empty ne modifie pas l'ensemble ce qui marche pour a), or on fait une copie dans ce cas là
+	Et copier tout le tableau c'est pas bien, donc faut passer par adresse.
+	Problème de cohérence avec les paramètres des autres fonctions.
+	Et le fait qu'on ne doit pas modifier l'ensemble, on déclare un ensemble const.
+	Attention à la conversion de type en C.
+
+3.	
+
+Exercice 3:
+
+1.	int set__add(struct set* se, int el);
+	Passer un pointeur permet de modifier la structure => Effet de bord. 
+	Donc pour éviter ça, on envoie un entier pour voir si on a fait une erreur ou pas.
+	//Renvoyer la struct modifier permettrait l'empilage des set__add
+	Remarque: Les codes d'erreur ont tendance à être l'inverse des valeurs booleenes.
+
+
+2.	
+
+Exercice 4:
+
+1.	Prototypes de set__empty:
+	a. Si allocation dans la pile ne sera valable que pendant la durée de la fonction car la zone peut être réutiliser.
+	   Il faut donc faire une allocation dynamique
+	b. Allocation dans la pile car valeur copié et c'est au client de faire la réservation mémoire.
+	
+	c. Vrai opposition entre les deux autres, on a déjà alloué avant l'appel de cette fonction.
+	   Passer pour paramètres un ensemble avec des éléments (et du coup on fait quoi ?)
+	Mémoire automatique ou dynamique. Faire attention aux adresses qu'on envoie, on évite(?) le problème avec l'allocation dynamique
+
+2.	En C pour compiler, le compilateur doit connaitre les tailles des types de données qu'il manipule pour faire la réservation mémoire.
+	Si on remplace par un *, tous les pointeurs ont la même taille, donc il peut compiler sans savoir ça pointe où
+
+3.
+
+Exercice 5:
+
+1.	Seul moyen de définir des types, faut mettre des struct, on fait les fonctions que sur ce type set qui a les propriétés qu'on veut en plus d'avoir un tableau.
+	Parce qu'avec un simple tableau, on risque de faire des erreurs car les tableaux n'ont peut-être pas les propriétés qu'on veut.
+
+
+Exercice 6:
+
+1.	Pour assurer la destruction des espaces mémoires qu'on a plus besoin

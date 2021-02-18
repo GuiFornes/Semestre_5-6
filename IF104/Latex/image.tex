@@ -1,0 +1,33 @@
+\documentclass[a4paper]{report}
+\usepackage{graphicx}
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+
+
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+
+% Figures
+
+\usepackage{amsmath, amssymb}
+\usepackage[colorlinks]{hyperref} % Pour les liens du sommaire cliquables.
+\usepackage{multicol}
+\usepackage{fancyhdr}
+
+
+
+
+
+\begin{document}
+\begin{large}
+La figure \ref{figure 1} représente le logo de \textsc{Enseirb-Matmeca}.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.6]{enseirb-matmeca}
+  \caption{Le logo de l'\textsc{Enseirb-Matmeca}}
+  \label{figure 1}
+\end{figure}
+\end{large}
+
+
+\end{document}

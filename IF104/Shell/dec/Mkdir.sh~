@@ -1,0 +1,17 @@
+#!/bin/bash
+
+Mkdir()
+{
+    for i in $@
+    do
+	if [ -e $i ]
+	then
+	    cd $i
+	else
+	    mkdir $i
+	    cd $i
+	fi
+    done
+    pwd
+}
+

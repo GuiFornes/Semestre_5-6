@@ -1,0 +1,14 @@
+\documentclass[a4paper]{report}
+\usepackage{amsmath}
+
+\begin{document}
+\section*{TD3}
+\subsection*{exercice 8}
+\underline{def} moment absolu d'ordre k $$u_k = E(|X|^{k}$$
+mq $$P(|X|\geq\epsilon)\leq\dfrac{1}{\epsilon²}E(|X|^{\alpha})$$
+$$ P(|X|\leq\epsilon)=\int_{|X|>=\epsilon}f(x)dx=\frac{1}{\epsilon^{\alpha}}\int_{|X|>=\epsilon}\epsilon^{\aplha}f(x)dx\leq=\frac{1}{\epsilon^{\alpha}}\int_{|X|\geq\epsilon}|\epsilon|^{\aplha}f(x)dx==\frac{1}{\epsilon^{\alpha}}E(|X|^{\alpha}) $$
+
+      \subsection*{exercice 9}
+      $$\xi$$
+
+      \end{document}

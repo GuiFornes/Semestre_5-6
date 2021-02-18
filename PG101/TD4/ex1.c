@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+void swap(int * adr_a, int * adr_b)
+{
+  int tmp = *adr_a;                     //&var prends l'adresse de var
+  printf("%d\n", tmp);                  //*adresse_var donne la valeur associé à l'adresse
+  *adr_a=*adr_b;
+  *adr_b=tmp;
+}
+void order(int* adr_a, int* adr_b)
+{
+  if(*adr_a>*adr_b){
+    swap(adr_a, adr_b);
+  }
+}
+
+
+int main(int argc, char *argv[])
+{
+  int a = 3;
+  int b = 4;
+  printf("Avant: a = %d(%p), b= %d(%p)\n", a, &a, b, &b);
+  swap(&a, &b);
+  printf("Après: a = %d(%p), b= %d(%p)\n", a, &a, b, &b);
+  order(&a, &b);
+  printf("Après order: a = %d(%p), b= %d(%p)\n", a, &a, b, &b);
+  return 0;
+}

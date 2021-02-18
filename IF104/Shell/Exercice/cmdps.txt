@@ -1,0 +1,4 @@
+CMD
+bash
+emacs
+ps

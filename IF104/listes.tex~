@@ -1,0 +1,32 @@
+\documentclass[a4paper]{report}
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+
+
+\begin{document}
+\center{\LARGE{Recette du Tiramisu}}
+
+\flushleft
+\textbf{\Large{Ingrédients}}
+\begin{itemize}
+  \item 250g de biscuits à la cuiller
+  \item 1l de café
+  \item 100g de sucre roux
+  \item 250g de mascarpone
+  \item 2 oeufs
+  \item 1 à 2 cuillères à soupe de Marsala (ou d’Amaretto)
+  \item un peu de chocolat en poudre
+\end{itemize}
+\textbf{\Large{Réalisation}}
+\begin{enumerate}
+\item Casser les oeufs en séparant le jaune du blanc
+  \item Battre les blancs en neige
+  \item Mélanger le sucre et les jaunes jusqu’à ce que le mélange blanchisse
+  \item Mélanger les blancs en neige et le Mascarpone, puis ajouter les jaunes
+  \item Ajouter le Marsala au café et y tremper un biscuit
+  \item Placer au fur et à mesure les biscuits dans un plat jusqu’à ce que le fond soit recouvert
+  \item Etaler la moitiè de la préparation sur les biscuits
+  \item Recommencer les deux étapes précédentes
+  \item Saupoudrer de chocolat
+  \item  Réserver au frais au moins 4h
+\end{enumerate}
+\end{document}

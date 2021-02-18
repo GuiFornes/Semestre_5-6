@@ -1,0 +1,63 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.m>
+#include <string.h>
+
+#define MAX_STR 64
+
+enum song_kind
+  {
+   ROCK,
+   POP,
+   JAZZ,
+   HIP_HOP,
+   UNKNOWN_KIND
+  };
+	      
+
+struct song
+{
+  char path[MAX_STR];
+  char title[MAX_STR];
+  char album[MAX_STR];
+  char artist[MAX_STR];
+  int track;
+  enum song_kind kind;
+};
+
+int scan_song(struct song *song)
+{
+  struct song s = {};
+  char buffer[12];
+  if (!gets(s.path) || strlen(s.path) == 0)
+    return 0;
+  if (!gets(s.title)) {
+  } else if (!gets(s.artist)) {
+  } else if (!gets(s.album)) {
+  } else if (gets(buffer)) {
+    int n = atoi(buffer);
+    s.track = n;
+    if (gets(buffer)) {
+        n = atoi(buffer);
+        s.kind = n;
+    }
+  }
+  *song = s;
+  return 1;
+}
+
+void print_info(struct song *song)
+{
+  printf("titre : %s, artiste : %s, album : %s\n", song.title, song.artist, song.album);
+  return;
+}
+
+int main(int argc, char *argv[])
+{
+    struct song some_song;
+    while (scan_song(&some_song)) {
+        print_song(some_song);
+    }
+    return 0;
+   
+}

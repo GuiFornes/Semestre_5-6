@@ -1,0 +1,15 @@
+\documentclass[a4paper]{article}
+
+\usepackage{amsmath, amssymb}
+
+\begin{document}
+Les formules peuvent être incluses dans le texte en format simple $\int^{\inf}_{-\inf}{exp^{-t²}dt}=\dfrac{\pi}{2}$ ou en mode \textbf{displaystyle}
+
+$$\int^{\inf}_{-\inf}{exp^{-t²}dt}=\dfrca{\pi}{2} $$ plus encombrant, mais plus élégant.
+
+Il est aussi possible d'avoir une présentation centrée
+\begin{equation}
+  \int^{\inf}_{-\inf}{exp^{-t²}dt}=\dfrca{\pi}{2}
+\end{equation}
+
+\end{document}

@@ -1,0 +1,32 @@
+\documentclass[a4paper]{report}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+\newcommand{\exo}[1]{\subsection*{exercice #1}}
+
+\begin{document}
+\section*{TD3}
+\subsection*{exercice 8.  Inégalité de Markov} 
+\underline{def} moment absolu d'ordre k $$u_k = E(|X|^{k}$$
+Montrons que $$P(|X|\geq\epsilon)\leq\dfrac{1}{\epsilon²}E(|X|^{\alpha})$$
+
+$$ P(|X|\leq\epsilon)=\int_{|X|>=\epsilon}f(x)dx=\frac{1}{\epsilon^{\alpha}}\int_{|X|>=\epsilon}\epsilon^{\alpha}f(x)dx\leq=\frac{1}{\epsilon^{\alpha}}\int_{|X|\geq\epsilon}|\epsilon|^{\alpha}f(x)dx==\frac{1}{\epsilon^{\alpha}}E(|X|^{\alpha}) $$
+
+
+\subsection*{exercice 10. Distribution triangulaire}
+si X et Y 2 v.a. indép. de densité f et g alors $Z=X+Y$ aura pour densit le produit de convulotion
+$$f*g(z)=\int_{D}f(x)g(z-x)dx=\int_Dg(y)f(z-y)dy$$
+$$f_X(x)=\mathbb{1}_{[0;1]}(x) \text{ et } f_Y(y)=\mathbb{1}_{[0,1]}(y)$$
+$$\text{donc  } g_z(z)=\int_{-\inf}^{\inf}\mathbb{1}_{[0,1]}(x)\mathbb{1}_{[0,1]}(z-x)dx$$
+$$\text{Pour que } g(z)\ne0 \text{ il faut }x\in[0;1]\text{ et } (z-x)\in[0;1]$$
+
+\textbf{...}
+
+\exo{12.}
+
+
+
+
+
+
+\end{document}

@@ -1,0 +1,44 @@
+%
+% file : test-latex.tex
+% date : sept 2012
+% author : Vinh-Thong Ta <vta@enseirb-matmeca.fr>
+% brief : if104 - example of LaTeX formatting capabilities 
+%
+
+\documentclass[a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage{graphicx}
+\graphicspath{{./img/}}
+\usepackage{amsmath, amssymb}
+\usepackage[left=3cm,right=3cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{url}
+
+\usepackage[french]{babel}
+
+\begin{document}
+
+\section*{Quelques remarques}
+\begin{enumerate}
+\item \begin{itemize}
+  \item il n'y a pas de decalage du logo de l'école, \emph{i.e.}, il
+    est bien aligné à gauche;
+    \item l'esapcement entre les différents éléments est identique
+      (logo, titre, etc);
+    \item les changements de taille de police;
+\end{itemize}
+  \item Dans la section 1, remarquer le décalage à gauche de la phrase
+    \item <Encore à gauche\>
+  \item $\hdots$ : c'est $\hdots$ et pas ...
+\end{enumerate}
+\section{Des tableaux entre autres}
+
+\begin{tabular}{l}
+   \cline{0-4}
+  \hline
+  A & B & C & D \\
+  E & F & G & H
+ 
+  \end{tabular}
+\end{document}

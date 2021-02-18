@@ -1,0 +1,328 @@
+\documentclass[a4paper]{report}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[top=2cm,bottom=2cm,left=2cm,right=2cm]{geometry}
+
+\title{Traitement de l'information}
+\begin{document}
+\begin{titlepage}
+  \begin{center}
+    ENSEIRB-MATMECA
+    \vspace{6cm}
+
+
+  \line(1,0){400} \\[0.4cm]
+
+    \begin{Huge}
+      T{\huge RAITEMENT} D{\huge E L'}I{\huge NFORMATION}
+
+    \end{Huge}
+    \vspace{0.4cm}
+  \line(1,0){400} \\[0.4cm]
+  \vspace{15cm}
+  semestre 5 --- 2020-2021
+  \end{center}
+\end{titlepage}
+\tableofcontents
+\chapter{Introduction}
+\section{Constitution du tableau de donnée}
+
+\begin{tabular}
+  {|c|c|c|c|c|c|c|c|c|c|}
+  \hline
+  Classe & Survivant & Nom & Sexe & Age & Parent présents & Ref billet & Prix billet & Port \\
+  \hline
+  \hline
+  1&1&Allen Elisabeth&F&29&0&null&211&B5&S\\
+  \hline
+  3&0&Dyker Adolf&N&23&1&null&7&null&C\\
+  \hline
+  3&1&Dyker Anna&F&22&1&null&null&null&C\\
+  \hline
+  3&0&Emir Farell&N&null&0&null&null&null&null\\
+  \hline
+\end{tabular}
+
+Toute les variables doivent être du même type ($\rightarrow$ quels sont les types de var ?) \\
+\begin{itemize}
+  \item Quid des données manquantes ? ($\rightarrow$ les remplacer ? par la moyenne ?)
+    \item Quid des donnée abérrantes ?
+  \item Lignes redondantes ? ($\rightarrow$ à supprimer ?)
+    \item Colonnes redondantes ?
+\end{itemize}
+\section{Les variables et les individus}
+\subsection{les individus}
+Eléments de la population étudiée
+\subsection{les variables}
+Application definie par
+  $$ \omega \text{(population)} \longrightarrow O \text{(espace d'observation) struct de cet espace}$$
+  $1^{ere}$ typologie \\
+
+
+\begin{tabular}
+  {|c|c|c|l|}
+  \hline
+  card O \/ struct de O & O ensemble continu de $\mathbb{R}$ & O fini ou denombrable & . \\
+  \hline
+  sans struct =, $\ne$ & / & C8P lieu de residence & nominale \\
+  \hline
+  struct ordi. $\leq$  & Age imperative & rang note & ordinal \\
+  \hline
+  corps ordonnée & salaire & / & mesurable \\
+  \hline
+  . & quantifiable & qualifiable & . \\
+  \hline
+\end{tabular}
+\vspace{1cm}
+
+$2^{eme}$typologie : $\rightarrow $variable d'incidence\\
+\hspace{4cm}$\rightarrow$ variable relationelle
+
+\begin{itemize}
+  \item variable d'incidence\\
+    $\rightarrow$ attribut descriptif ,reponse oui = 1 OU non = 0\\
+    $\rightarrow$ var. numérique  espace d'observation = $\mathbb{R}$
+  \item var. relationnelles \\
+    $\rightarrow$ var rang $\rightarrow$ échelle de notes suffisamment fine pour que 2 individu n'aient pas (pas de suite c'est effacé)\\
+    $\rightarrow$ var. présentant des modalités non ordonnées (bac, csp, ...)\\
+    $\rightarrow$ var. mesures sur $\mathbb{R} \times \mathbb{R}$
+\end{itemize}
+
+\section{Les types de tableaux}
+CN   Tableaux doivent être \underline{homogènes} 1 seul types de variable
+\subsection{Tableau de données quantitatives}
+(pourcentage de minerai par sondage / profondeur)
+$$x^{j\leftarrow colonne}_{i\leftarrow ligne}$$
+\underline{traitement}
+\subsection{tableau de contingence}
+croisement de 2 var qualitatives \\
+\underline{Traitement} : Analyse fonctionelle des correspondances
+\subsection{tableaux binaires (logique d'incidence)}
+tableaux d'attributs descriptif de 1,0 \\
+\underline{Traitement} : classifications hiérarchiques\\
+\subsection{Tableaux de préferences}
+Notes données à des marques de parfum\\
+\underline{Traitement} : Analyse fonctionelle des correspondances multiples
+\subsection{Tableaux de modalités}
+
+lisez vous tel journal ? \\
+\begin{itemize}
+  \item 5 : tout le temps
+  \item 4 : regulièrement
+  \item 3 : parfois
+  \item 2 : rarement
+  \item 1 : jamais
+\end{itemize}
+
+\subsection{tableaux de proximité}
+mesure sur $\mathbb{R}\times\mathbb{R}$
+
+\begin{tabular}
+  {c|c|c|c}
+  &r1&r2&r3\\
+  \hline
+  r1&&&\\
+  \hline
+  r2&&&\\
+  \hline
+  r3&&&\\
+
+\end{tabular}
+
+\section{Changement de variables}
+$\rightarrow$ pour rendre le tableau homogène \hspace{4cm}
+\begin{tabular}
+  {c|c|c|}
+  &Sexe&couleur yeux\\
+  \hline
+  pere&M&marron\\
+  \hline
+  mere&F&bleu\\
+  \hline
+  enfant&M&vert\\
+\end{tabular}\\
+
+codage disjonctif complet\\
+
+\begin{tabular}
+  {c|c|c|c|c|c|}
+  &sexe M&sexe F & yeux marr & yeux bleu & yeux vert \\
+  \hline
+  pere&1&0&1&0&0\\
+  mere&0&1&0&1&0\\
+  enfant&1&0&0&0&1\\
+  \hline
+\end{tabular}\\
+
+$\longrightarrow$ \underline{Tableau de \emph{Burt}}\\
+
+$^{t}D \times D$\\
+
+
+\begin{tabular}
+  {c|c|c|c|c|c|}
+  &sexe M&sexe F&Y m&Y b&Y v\\
+  \hline
+  sexe M&2&0&1&0&1\\
+  \hline
+  sexe F&0&1&0&1&0\\
+  \hline
+  Y m&1&0&1&0&0\\
+  \hline
+  Y b&0&1&0&1&0\\
+  \hline
+  Y v&1&0&0&0&1\\
+  \hline
+\end{tabular}\\
+
+Tableaux d'effectifs $\longrightarrow$ Analyse fonctionnelle des correspondances\\
+
+autre exemple : Tableau de Burt du Titanic\\
+
+\begin{tabular}
+  {c|c|c|c|c|c|c|c|c|c}
+  &classe 1&classe 2&classe 3&enf&adul&F&M&surv 0&surv 1\\
+  \hline
+  classe 1&325&0&0&6&319&147&180&122&203\\
+  \hline
+  classe 2&0&285&0&24&261&106&179&167&118\\
+  \hline
+  classe 3&0&0&706&79&627&null&null&null&null\\
+  etc&$\vdots$&$\vdots$&$\vdots$&$\vdots$&$\vdots$&$\vdots$&$\vdots$&$\vdots$&$\vdots$\\
+\end{tabular}
+
+\section{Elements descriptifs d'un tableau de données}
+n : individus/lignes\\
+p : variable/colonnes\\
+
+individu i = $x_{i}= \begin{pmatrix}
+  x_{i}^{1}&
+  \hdots&
+  x_{i}^{p}
+\end{pmatrix}
+\in \mathbb{R}^{p}$
+la variable j : $x_{j}= \begin{pmatrix}
+  x_{i}^{1} \\
+  \vdots \\
+  x_{i}^{p}
+\end{pmatrix}
+\in \mathbb{R}^{n}$\\
+On va étudier le nuage $N_{I}=\{x_{i} , i=1,\hdots,n, \text{poids} p_{i}=\dfrac{1}{n}\}$\\
+ $N_{J}=\{x_{j} , j=1,\hdots,p , \text{poids} p_{j}=\dfrac{1}{p}\}$\\
+
+ \underline{Soit le nuage des variables}
+
+ A chaque variable, on peut associer:
+ sa myenne
+ $$\underline{x}^{j}=\sum^{n}_{i=1}p_{i}x_{i}^{j}$$
+ sa variance
+ $Var\underline{x}^{j}=\sum^{n}_{i=1}p_{i}(x_{i}^{j}-\overline{x}^{j})^{2}$
+
+\vspace{2cm}
+ TROU
+\vspace{2cm}
+
+
+ Pour le nuage $N_{I}$on peut calc le centre de garvité :\\
+ $$\underline{\overline{x}}=\sum_{i=1}^{n}p_{i}\underline{x_{i}}$$
+ $$\underline{\overline{x}}=\begin{pmatrix}
+   \overline{x}^{1}\\
+   \vdots\\
+   \overline{x}^{p}
+ \end{pmatrix}
+ $$
+ Sur le nuage $N_{j}$ on peut calculer le centre de gravité $$\underline{\overline{x}}=\begin{pmatrix}
+   \overline{\underline{x}}_{1}\\
+   \vdots\\
+   \underline{\overline{x}}_{n}
+ \end{pmatrix}$$
+ \underline{L'inertie du nuage}
+
+ des individus  $I_{N_{I}}=\sum^{n}_{i=1}p_{i}d^{2}(x_{i},\underline{\overline{x}})$
+ $\longrightarrow$ \underline{distance}
+
+ \section{Choix d'une mesure de ressemblance}
+ \underline{définition 1} : indice de similarité
+ $$ s \Omega\time\Omega\longrightarrow\mathbb{R}^{+}$$
+ s est un indice de similarité si :
+ \begin{enumerate}
+   \item s est symetrique, $s(x, y)=s(y, x)$
+   \item $s(x, x)=s(y, y) \geq s(x, y)$
+ \end{enumerate}
+\underline{définition 2} : indice de dissimilarité
+$$ s \Omega\time\Omega\longrightarrow\mathbb{R}^{+}$$
+s est un indice de dissimilarité si :
+\begin{enumerate}
+  \item symetrique
+    \item s(x, x)=0
+
+\end{enumerate}
+\underline{definition 3} : une distance est un indice de dissimilarité\\
+qui vérifie en plus
+ \begin{enumerate}
+   \item $s(x, y)=0 \leftrightarrow x=y$
+   \item $s(x, z)\leq s(x,y)+s(y,z)$
+ \end{enumerate}
+ \begin{itemize}
+     \item distance euclidienne (A en composantes principales)
+   \item distance dite du $\chi^{2}$ (Analyse factorielle des correspondances)
+
+     $$d^{2}(\underline{x}_{i}, \underline{x}_{i'})=\sum_{j=1}^{p}\dfrac{1}{x^{j}_{i}}(\dfrac{x^{j}_{i}{x_{i}}}-\dfrac{x_{i'}^{j}}{x_{i'}})^{2}$$
+   \item Tableau d'incidence
+
+     TROU
+
+\end{itemize}
+\underline{Distance entre groupes}
+
+(indice d'aprépation)
+
+distance du lien max
+
+%$\delta(A, B)=max_{x\inA \& y\inB}(d(x, y))$\\
+distance du lien min \hspace{5cm} distance fréquemment utilisé\\
+distance des centres de gravité \hspace{4cm} $\delta(A, B)=I$
+$\delta(A, B)=d(\underline{\overline{x}}, \underline{\overline{y}})$
+
+trou mais fin de chap
+
+\chapter{Analyse en composantes principales : \emph{ACP}}
+
+Traite les tableaux de données quantitativement positives
+
+\section{Principe de la méthode}
+
+
+Le pb qui se pose dans la mesure où 1 partie des variables sont liées, c'est de passer d'un tableau X de dimension $n \times p$ à un tableau Y de dim $n \times q$ $q < p$ en réduisant le nbr de variable descriptive tout en perdant le moins possible d'info\\
+la methode utilisé en ACP pour passer de p var à q var q<p consiste à projeter le nuage des individus sur un sous espace W de dim q en deformant le moins possible le nuage lors de sa projection\\
+Les composantes principales sont les nouvelles variables. elles vont s'interpreter comme des'' 'synthèses' des variables initiales $\underline{x^{j}}$.\\
+
+\vspace{1cm}
+TROU flemme 3 lignes + fin du cours
+\vspace{1cm}
+
+Le principe de l'ACP, c'est de réduire le nbr de variables décrivant les individus en perdant le moins possible d'information
+
+\section{Formalisation du problème}
+
+
+Rechercher l'espace de projection \emph{W} (a : origine, $u_{1},\hdots, u_{q}$ : système générateur de W)
+de telle façon que la perte d'info fut minimale
+
+$$\forall i \underline{\widehat{x_{i}}}=\underline{a}+\sum^{a}_{k=1}y^{k}_{i}\underline{u_{k}}$$
+
+$\underline{\widehat{x_{i}}}$ est la projection orthogonale de $\underline{x_{i}} sur \emph{W}$
+
+On chercher le referentiel \emph{W} tq $\sum _{W}=\sum^{n}_{i=1}p_{i}d^{2}(\underline{x_{i}}, \underline{\widehat{x_{i}}})$
+
+\section{Resoplution du problème}
+
+\subsection{Choix de a}
+
+\subsection{choix de $[\underline{u_{1}}, \hdots, \underline{u_{q}}]$}
+
+
+
+
+\end{document}

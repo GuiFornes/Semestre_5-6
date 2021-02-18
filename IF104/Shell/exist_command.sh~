@@ -1,0 +1,13 @@
+#!/bin/bash
+
+command_test=$1
+for i in $(ls /bin)
+do
+    if [ $command_test == $i ]
+    then
+	echo elle existe
+	exit 0
+    fi
+done
+echo elle n\'existe pas
+exit 1

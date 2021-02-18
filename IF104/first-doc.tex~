@@ -1,0 +1,19 @@
+\documentclass{article}
+
+\begin{document}
+
+ceci est un test.
+
+à la ligne.
+
+test sans saut
+\include{first-inc.tex}
+tjr sans saut
+
+un saut
+
+test 2
+
+\input{first-inp.tex}
+c'est le test 2
+\end{document}
